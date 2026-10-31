@@ -1,0 +1,18 @@
+{
+    "id": "openrouter",
+    "name": "OpenRouter",
+    "version": "1.0.0",
+    "author": "DJLegends",
+    "description": "A kind of connection for OpenRouter's unified API, beside the app's OpenAI-compatible one: pick \"OpenRouter\" as a connection's kind and give it your OpenRouter API key. Sends reasoning effort via OpenRouter's reasoning object, surfaces upstream provider errors and model vision/context metadata, and lets you configure provider routing (sorting, preferred or ignored providers, fallbacks, data policy and ZDR).",
+    "requires": { "api": "2.6" },
+    "client": "client/index.js",
+    "server": "server/index.js",
+    "settings": {
+        "sort": "",
+        "order": "",
+        "ignore": "",
+        "allowFallbacks": true,
+        "dataCollection": "allow",
+        "zdr": false
+    }
+}
