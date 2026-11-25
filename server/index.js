@@ -38,8 +38,8 @@ export function register(router, ctx) {
         frequencyPenalty: 'frequency_penalty',
         seed: 'seed',
         json: (on, body) => { if (on) body.response_format = { type: 'json_object' }; },
-        // OpenRouter normalizes thinking across Claude, DeepSeek R1, Gemini, o-series, etc. via `reasoning`; its top level is xhigh, so max maps there
-        reasoning: (r, body) => { body.reasoning = { effort: r.effort === 'max' ? 'xhigh' : r.effort }; },
+        // OpenRouter normalizes thinking across Claude, DeepSeek R1, Gemini, o-series, etc. via `reasoning`; it names none to max itself, so the word goes as picked
+        reasoning: (r, body) => { body.reasoning = { effort: r.effort }; },
     };
 
     const baseOf = (profile) => String(profile.base_url || DEFAULT_BASE).replace(/\/+$/, '');
